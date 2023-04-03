@@ -1,0 +1,273 @@
+$sb-wd: 64px;
+
+// 글로벌 옵션
+@use 'fd.scss';
+
+div{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Hahmlet', serif;
+    margin: 0px;
+    display: flex;
+}
+
+.div-line{
+    height: 16px;
+}
+// 글로벌 옵션
+
+// Side bar
+
+.sidebar{
+    height: 100vh;
+    width: ($sb-wd + 176px);
+    background-color: fd.$amber900;
+    color: fd.$white;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    position: fixed;
+    left: -176px;
+
+    .sidebar-btn-group{
+        display: flex;
+        align-items:center;
+        gap: 16px;
+        position: relative;
+        height: 32px;
+    }
+    .sidebar-btn-group:hover{
+        text-transform: uppercase;
+    }
+    .sidebar-iconarea{
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        right: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    span{
+        position: absolute;
+    }
+}
+
+.sidebar:hover{
+    transform: translateX(176px);
+    animation-duration: 10s;
+    .sidebar-iconarea{
+        transform: translateX(-176px);
+    }
+    span{
+        transform: translateX(+40px);
+    }
+}
+
+// @mixin sidebar-ani {
+    
+// }
+
+
+// Side bar
+
+
+.body{
+    width: 100%;
+    padding-left: $sb-wd;
+}
+// 헤더
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 72px;
+    padding: 0px 24px;
+    background-color: fd.$white;
+}
+
+.header-searchbar{
+    display: flex;
+    border: 1px solid fd.$grey400;
+    border-radius: 8px;
+    overflow: hidden;
+    padding-left: 8px;
+
+    button{
+        border: none;
+        width: 40px;
+        height: 40px;
+        background: fd.$grey700;
+        color: fd.$white;
+    }
+
+    button:hover{
+        background-color: #0279D4;
+    }
+
+    .search{
+        height: 40px;
+        border: none;
+    }
+}
+
+.header-personal {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    color: fd.$amber700;
+}
+
+.badge-btn{
+    border: none;
+    background: none;
+    // background: #f2a9f4;
+    height: 40px;
+    width: 40px;
+    position: relative;
+
+    span{
+        background-color: fd.$red700;
+        color: fd.$white;
+        border-radius: 999px;
+        padding: 2px 4px;
+
+        position: absolute;
+        top: -10%;
+        left: 60%;
+        z-index: 3;
+    }
+
+    i{
+        color: fd.$grey600;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+    }
+}
+
+// 헤더
+
+// 콘텐츠
+.content{
+    background-color: fd.$grey200;  
+    color: fd.$grey800;   
+}
+
+@mixin card ($color){
+    padding: 48px;
+    background-color: fd.$white;
+    border-radius: 16px;
+    border-left: 8px solid $color;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    gap: 32px;
+
+    p{
+        color: fd.$grey600;
+        margin-bottom: 4px;
+    }
+
+    h4{color: fd.$grey900;}
+
+    i{color: $color;}
+}
+
+.card-01{@include card(fd.$red700)}
+
+.card-02{@include card(#6B3CC9)}
+
+.card-03{@include card(#14A37B)}
+
+.card-04{@include card(#0279D4)}
+
+.container{
+    border-radius: 16px;
+    overflow: hidden;
+    .container-header{
+        background-color: fd.$amber300;
+        color: fd.$grey800;
+        height: 56px;
+        padding: 16px;
+        display: flex;
+        align-items: center;
+    }
+    .container-content{
+        background-color: fd.$white;
+        padding: 0px 16px;
+    }
+}
+// 콘텐츠
+.task {
+    margin: 0px;
+    list-style: none;
+    padding: 0px;
+    li{
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid fd.$grey300;
+    }
+
+    li:last-child {
+        border-bottom: none;
+      }
+}
+
+.task-count{
+    background-color: fd.$amber900;
+    color: fd.$white;
+    padding: 2px 8px;
+    border-radius: 999px;
+}
+
+// 그리드 시스템
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    padding: 16px 12px;
+}
+
+@for $grid from 1 through 12 {
+    .col-#{$grid} {
+      width: calc(100% / 12)*$grid ;
+      padding: 0px 12px;
+      margin: 8px 0px;
+    }
+  }
+
+//   미디어 스크린!!!
+@media screen and (max-width:768px) {
+    @for $grid from 1 through 12 {
+        .col-md-#{$grid} {
+          width: calc( 100% / 12 )*$grid ;
+          padding: 0px 12px;
+        }
+      }   
+}
+
+// 미디어 스크린!!!
+@media screen and (max-width:540px) {
+    @for $grid from 1 through 12 {
+        .col-sm-#{$grid} {
+          width: calc( 100% / 12 )*$grid ;
+          padding: 0px 12px;
+        }
+      }
+}
+// 그리드 시스템
+
+
+

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 페이지</title>
+
+    <!-- 링크 -->
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- 차트 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-btn-group">
+            <div class="sidebar-iconarea">
+                <i class="fas fa-home fa-lg"></i>
+            </div>
+            <span class="body-01">Home</span>
+        </div>
+        <div class="sidebar-btn-group">
+            <div class="sidebar-iconarea">
+                <i class="fas fa-headphones fa-lg"></i>
+            </div>
+            <span class="body-01">Services</span>
+        </div>
+        <div class="sidebar-btn-group">
+            <div class="sidebar-iconarea">
+                <i class="fas fa-flag fa-lg"></i>
+            </div>
+            <span class="body-01">Alerts</span>
+        </div>
+        <div class="sidebar-btn-group">
+            <div class="sidebar-iconarea">
+                <i class="fas fa-chart-pie fa-lg"></i>
+            </div>
+            <span class="body-01">Stats</span>
+        </div>
+    </div>
+    <!-- sidebar -->
+    <div class="body">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-searchbar">
+                <form action="">
+                    <input type="search" class="search">
+                </form>
+                <button>
+                    <i class="fas fa-search "></i>
+                </button>
+            </div>
+    
+            <div class="header-personal">
+                <div class="badge-btn">
+                    <i class="fas fa-bell fa-lg"></i>
+                    <span class="h8">62</span>
+                </div>
+                <div class="badge-btn">
+                    <i class="fas fa-comment-alt fa-lg"></i>
+                    <span class="h8">6</span>
+                </div>
+                <p class="h6">Killdong Hong</p>
+            </div>
+        </div>
+        <!-- Header -->
+
+        <!-- Content -->
+        <div class="content row">
+            <h1 class="h3 col-12">대쉬보드</h1>
+            <div class="col-3 col-md-6">
+                <div class="card-01">
+                    <div>
+                        <p class="h5">월간 수입</p>
+                        <h4>400,000$</h4>
+                    </div>
+                    <i class="fas fa-calendar-week fa-3x"></i>
+                </div>
+            </div>
+            <div class="col-3 col-md-6">
+                <div class="card-02">
+                    <div>
+                        <p class="h5">연간 수입</p>
+                        <h4>4,000,000$</h4>
+                    </div>
+                    <i class="fas fa-dollar-sign fa-3x"></i>
+                </div>
+            </div>
+            <div class="col-3 col-md-6">
+                <div class="card-03">
+                    <div>
+                        <p class="h5">할 일</p>
+                        <h4>13</h4>
+                    </div>
+                    <i class="fas fa-tasks fa-3x"></i>
+                </div>
+            </div>
+            <div class="col-3 col-md-6">
+                <div class="card-04">
+                    <div>
+                        <p class="h5">문의 건수</p>
+                        <h4>26</h4>
+                    </div>
+                    <i class="fas fa-comments fa-3x"></i>
+                </div>
+            </div>
+
+            <div class="div-line col-12"></div>
+
+            <div class="col-9">
+                <div class="container">
+                    <div class="container-header h5">수입 개요</div>
+                    <div class="container-content">
+                        <canvas id="myChart"></canvas>
+                        <script>
+                        var ctx = document.getElementById('myChart').getContext('2d');
+                        var myChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                                datasets: [{
+                                    label: '평균 수입',
+                                    data: [12, 19, 3, 5, 2, 3],
+                                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                    borderColor: 'rgba(255, 99, 132, 1)',
+                                    borderWidth: 2
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container col-3">
+                <div class="container">
+                    <div class="container-header h5">할 일</div>
+                    <div class="container-content">
+                        <ul class="task">
+                            <li class="body-01">
+                                <span>Borrowed Items</span> 
+                                <span class="task-count h8">14</span>
+                            </li>
+                            <li class="body-01">
+                                <span>Trello requesrs</span> 
+                                <span class="task-count h8">14</span>
+                            </li>
+                            <li class="body-01">
+                                <span>Marked Comments</span> 
+                                <span class="task-count h8">14</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+    
+        <!-- 그리드 시스템 관찰용. 제작 완료후 삭제 -->
+        <div>
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6"></div>
+            </div>
+        
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+            </div>
+        
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+            </div>
+        
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-2">1</div>
+                <div class="col-2 col-md-4 col-sm-6">2</div>
+                <div class="col-2 col-md-4 col-sm-6">3</div>
+                <div class="col-2 col-md-4 col-sm-6">4</div>
+                <div class="col-2 col-md-4 col-sm-6">5</div>
+                <div class="col-2 col-md-4 col-sm-6">6</div>
+            </div>
+        
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-4"></div>
+                <div class="col-2"></div>
+            </div>
+    
+            <div class="row">
+                <div class="col-5"></div>
+                <div class="col-3"></div>
+                <div class="col-2"></div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+        <!-- 그리드 시스템 관찰용. 제작 완료후 삭제 -->
+    </div>
+</body>
+</html>

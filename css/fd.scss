@@ -1,0 +1,173 @@
+// Typography
+.body-02 {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: .16px;
+    margin: 0px;
+}
+.body-01 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+h6 {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+h5{
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+h4{
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+h3{
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+h2{
+    font-size: 42px;
+    line-height: 50px;
+    font-weight: 300;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+h1{
+    font-size: 54px;
+    line-height: 64px;
+    font-weight: 300;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+.h8 {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+.h7 {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+.h6 {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+.h5{
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+.h4{
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+.h3{
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+.h2{
+    font-size: 42px;
+    line-height: 50px;
+    font-weight: 300;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+.h1{
+    font-size: 54px;
+    line-height: 64px;
+    font-weight: 300;
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+// GreyScale
+$white: #FFFFFF;
+$grey100: #FCFCFC;
+$grey150: #F5F5F5;
+$grey200: #EFEFEF;
+$grey250: #E8E8E8;
+$grey300: #DFDFDF;
+$grey350: #C8C8C8;
+$grey400: #B7B7B7;
+$grey500: #949494;
+$grey600: #777777;
+$grey650: #616161;
+$grey700: #555555;
+$grey750: #3F3F3F;
+$grey770: #383838;
+$grey800: #2A2A2A;
+$grey850: #1F1F1F;
+$grey870: #1A1A1A;
+$grey900: #111111;
+
+// LINE Amber
+$amber300:#FFF9CC;
+$amber400:#FFEB94;
+$amber500:#FFD86B;
+$amber600:#FFC53D;
+$amber700:#FCB321;
+$amber800:#FA9E1E;
+$amber900:#F77911;
+$amber600p:#F7821B;
+$amber500p:#FFB55D;
+$amber400p:#FFDD80;
+$amber300p:#FFE8C2;
+
+// LINE Red
+$red300:#FCC5CB;
+$red400:#FF96A3;
+$red500:#FF697A;
+$red600:#FF334B;
+$red700:#E5172F;
+$red800:#C9162B;
+$red900:#85101E;
+$red600p:#D44652;
+$red500p:#EB6570;
+$red400p:#F68A94;
+$red300:#F2CED2;
