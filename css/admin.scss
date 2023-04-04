@@ -42,6 +42,7 @@ body{
     }
     .sidebar-btn-group:hover{
         text-transform: uppercase;
+        transition: 0.5s ease;
     }
     .sidebar-iconarea{
         width: 32px;
@@ -59,19 +60,16 @@ body{
 
 .sidebar:hover{
     transform: translateX(176px);
-    animation-duration: 10s;
+    transition: 0.7s ease;
     .sidebar-iconarea{
         transform: translateX(-176px);
+        transition: 0.5s ease-out;
     }
     span{
         transform: translateX(+40px);
+        transition: 0.3s ease-in;
     }
 }
-
-// @mixin sidebar-ani {
-    
-// }
-
 
 // Side bar
 
@@ -83,6 +81,7 @@ body{
 // 헤더
 .header {
     display: flex;
+    flex-direction:row-reverse;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -93,26 +92,29 @@ body{
 
 .header-searchbar{
     display: flex;
-    border: 1px solid fd.$grey400;
-    border-radius: 8px;
     overflow: hidden;
-    padding-left: 8px;
-
+    .search{
+        width: 200px;
+        height: 40px;
+        border-radius: 8px 0px 0px 8px;
+        border-width: 2px 0px 2px 2px;
+        border-style: solid;
+        border-color: fd.$grey400;
+        padding: 0px 8px;
+        box-sizing: border-box;
+    }
     button{
         border: none;
         width: 40px;
         height: 40px;
         background: fd.$grey700;
         color: fd.$white;
+        border-radius: 0px 8px 8px 0px;
+        transition: 0.3s;
     }
-
-    button:hover{
-        background-color: #0279D4;
-    }
-
-    .search{
-        height: 40px;
-        border: none;
+    .search:focus{
+        width: 360px;
+        transition: 0.3s;
     }
 }
 
@@ -126,7 +128,6 @@ body{
 .badge-btn{
     border: none;
     background: none;
-    // background: #f2a9f4;
     height: 40px;
     width: 40px;
     position: relative;
@@ -150,6 +151,23 @@ body{
         left: 50%;
         transform: translate(-50%,-50%);
         z-index: 2;
+    }
+}
+
+.header-hamberger{
+    color: fd.$grey600;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items :center;
+    justify-content: center;
+    display: none; 
+}
+
+.header-hamberger:hover{
+    i{
+        transform: rotate(90deg);
+        transition: .5s;
     }
 }
 
@@ -255,7 +273,17 @@ body{
           width: calc( 100% / 12 )*$grid ;
           padding: 0px 12px;
         }
-      }   
+    }   
+    
+    .header-searchbar{
+        display: none;
+    }
+    .header-personal{
+        display: none;
+    }
+    .header-hamberger{
+        display: flex;
+    }
 }
 
 // 미디어 스크린!!!

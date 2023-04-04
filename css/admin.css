@@ -161,6 +161,7 @@ body {
 }
 .sidebar .sidebar-btn-group:hover {
   text-transform: uppercase;
+  transition: 0.5s ease;
 }
 .sidebar .sidebar-iconarea {
   width: 32px;
@@ -177,14 +178,15 @@ body {
 
 .sidebar:hover {
   transform: translateX(176px);
-  -webkit-animation-duration: 10s;
-          animation-duration: 10s;
+  transition: 0.7s ease;
 }
 .sidebar:hover .sidebar-iconarea {
   transform: translateX(-176px);
+  transition: 0.5s ease-out;
 }
 .sidebar:hover span {
   transform: translateX(40px);
+  transition: 0.3s ease-in;
 }
 
 .body {
@@ -194,6 +196,7 @@ body {
 
 .header {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -204,10 +207,17 @@ body {
 
 .header-searchbar {
   display: flex;
-  border: 1px solid #B7B7B7;
-  border-radius: 8px;
   overflow: hidden;
-  padding-left: 8px;
+}
+.header-searchbar .search {
+  width: 200px;
+  height: 40px;
+  border-radius: 8px 0px 0px 8px;
+  border-width: 2px 0px 2px 2px;
+  border-style: solid;
+  border-color: #B7B7B7;
+  padding: 0px 8px;
+  box-sizing: border-box;
 }
 .header-searchbar button {
   border: none;
@@ -215,13 +225,12 @@ body {
   height: 40px;
   background: #555555;
   color: #FFFFFF;
+  border-radius: 0px 8px 8px 0px;
+  transition: 0.3s;
 }
-.header-searchbar button:hover {
-  background-color: #0279D4;
-}
-.header-searchbar .search {
-  height: 40px;
-  border: none;
+.header-searchbar .search:focus {
+  width: 360px;
+  transition: 0.3s;
 }
 
 .header-personal {
@@ -255,6 +264,21 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+}
+
+.header-hamberger {
+  color: #777777;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.header-hamberger:hover i {
+  transform: rotate(90deg);
+  transition: 0.5s;
 }
 
 .content {
@@ -514,6 +538,15 @@ body {
   .col-md-12 {
     width: 100%;
     padding: 0px 12px;
+  }
+  .header-searchbar {
+    display: none;
+  }
+  .header-personal {
+    display: none;
+  }
+  .header-hamberger {
+    display: flex;
   }
 }
 @media screen and (max-width: 540px) {
